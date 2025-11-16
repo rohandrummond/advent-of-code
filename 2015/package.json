@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "day1": "tsx solutions/day1.ts"
+    "day1": "tsx solutions/day1.ts",
+    "day2": "tsx solutions/day2.ts"
   },
   "keywords": [],
   "author": "",
