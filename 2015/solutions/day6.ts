@@ -6,19 +6,19 @@ function createGrid(size: number): number[][] {
 
 function turnOn(grid: number[][], row: number, col: number) {
   if (grid[row] && grid[row][col] !== undefined) {
-    grid[row][col] = 1
+    grid[row][col]++
   }
 }
 
 function turnOff(grid: number[][], row: number, col: number) {
   if (grid[row] && grid[row][col] !== undefined) {
-    grid[row][col] = 0
+    if (grid[row][col] !== 0) grid[row][col]--
   }
 }
 
 function toggle(grid: number[][], row: number, col: number) {
   if (grid[row] && grid[row][col] !== undefined) {
-    grid[row][col] === 0 ? (grid[row][col] = 1) : (grid[row][col] = 0)
+    grid[row][col] = grid[row][col] + 2
   }
 }
 
