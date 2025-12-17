@@ -14,7 +14,7 @@ function resolveSource(
   return circuit[source] ?? null
 }
 
-function connectCircuit(input: string[]) {
+function connectCircuit(input: string[], overrideB?: number): number {
   // Create record to track gates and their signals
   let circuit: Record<string, number | null> = {}
 
@@ -24,6 +24,11 @@ function connectCircuit(input: string[]) {
     if (destination) {
       circuit[destination] = null
     }
+  }
+
+  // Override value of wire b if provided
+  if (overrideB !== undefined) {
+    circuit['b'] = overrideB
   }
 
   // Track whether circuit has changed (for terminating loop)
@@ -130,13 +135,23 @@ function connectCircuit(input: string[]) {
       }
     }
   }
-  console.log(`circuit['a'] is ${circuit['a']}`)
+
+  if (circuit['a'] === null || circuit['a'] === undefined) {
+    throw new Error("circuit['a'] is null or undefined")
+  }
+
+  return circuit['a']
 }
 
 try {
   const input = fs.readFileSync('./inputs/day7.txt', 'utf8')
   const instructions = input.split(/\r?\n/).filter(Boolean)
-  connectCircuit(instructions)
+
+  let signalA = connectCircuit(instructions)
+  console.log(`a is currently ${signalA}`)
+
+  let updatedSignalA = connectCircuit(instructions, signalA!)
+  console.log(`a is ${updatedSignalA} after override`)
 } catch (err: unknown) {
   console.error(err)
 }
