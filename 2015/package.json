@@ -12,7 +12,8 @@
     "day4": "tsx solutions/day4.ts",
     "day5": "tsx solutions/day5.ts",
     "day6": "tsx solutions/day6.ts",
-    "day7": "tsx solutions/day7.ts"
+    "day7": "tsx solutions/day7.ts",
+    "day8": "tsx solutions/day8.ts"
   },
   "keywords": [],
   "author": "",
