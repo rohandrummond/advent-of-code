@@ -58,7 +58,7 @@ function getRouteDistances(
 }
 
 function getShortestRoute(routeDistances: Record<string, number>) {
-  return Math.min(...Object.values(routeDistances))
+  return Math.max(...Object.values(routeDistances))
 }
 
 function calculateShortestRoute(data: string[]) {
