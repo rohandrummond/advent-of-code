@@ -66,9 +66,9 @@ function findNextPassword(current: string): string {
 
 try {
   const input = fs.readFileSync('./inputs/day11.txt', 'utf8').trim()
-  console.log(`input is: ${input}`)
   const result = findNextPassword(input)
-  console.log(`next valid password is: ${result}`)
+  const nextResult = findNextPassword(result)
+  console.log(`Next valid password is: ${nextResult}`)
 } catch (err: unknown) {
   console.error(err)
 }
