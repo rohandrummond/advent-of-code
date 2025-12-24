@@ -13,7 +13,8 @@
     "day5": "tsx solutions/day5.ts",
     "day6": "tsx solutions/day6.ts",
     "day7": "tsx solutions/day7.ts",
-    "day8": "tsx solutions/day8.ts"
+    "day8": "tsx solutions/day8.ts",
+    "day9": "tsx solutions/day9.ts"
   },
   "keywords": [],
   "author": "",
