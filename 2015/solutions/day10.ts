@@ -29,7 +29,7 @@ function lookAndSay(input: string) {
 try {
   const input = fs.readFileSync('./inputs/day10.txt', 'utf8').trim()
   let result = input
-  for (let i = 0; i < 40; i++) {
+  for (let i = 0; i < 50; i++) {
     result = lookAndSay(result)
   }
   console.log('Final length:', result.length)
